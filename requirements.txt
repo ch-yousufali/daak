@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+httpx
+sqlalchemy
+sqlite-utils
+chromadb
+pytesseract
+pillow
+pypdf
+numpy
+pandas

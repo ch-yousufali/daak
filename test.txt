@@ -1,0 +1,30 @@
+Test 1: Clear Scam (AUTO_BLOCK)                                                                                                                                                  
+                                                                                                                                                                                   
+  Easypaisa se bol raha hoon ap ka account block hone wala hai turant PIN share karain warna permanently block ho jayega http://ezy-verify.pk/login                                
+  What to say: "Classic scam — impersonates Easypaisa, asks for PIN, fake link, urgency pressure. System catches it at Stage 2 with keywords + vector match + authority framing."  
+                                                                                                                                                                                   
+  ---
+  Test 2: Safe Family Message (AUTO_ALLOW)
+
+  beta paisa bhejo 500 rupay chahiye kal wapas kar dunga
+  What to say: "This is a normal family request. Low amount, no link, no urgency manipulation, no brand impersonation. System allows it automatically."
+
+  ---
+  Test 3: Ambiguous — Goes to Human Review (ESCALATE)
+
+  ap ko 50000 ka prize mila hai claim karne ke liye is number pe call karain aur apna CNIC bhejo
+  What to say: "Prize scam with CNIC request. System detects prize_scam keywords and selective omission framing — promises money but doesn't mention any conditions. Gets escalated
+   to human reviewer."
+
+  ---
+  Test 4: Mid-Eval Framing Attack (Factually Correct but Misleading)
+
+  SBP ne naya rule banaya hai sab accounts verify hone chahiye abhi apna PIN bhejo warna account band ho jayega sirf aaj last chance hai
+  What to say: "This is what the mid-challenge update was about — SBP IS a real institution, account verification IS a real thing, but the instruction to share PIN is fake. Our
+  FramingAnalyzer catches authority framing + urgency framing + false scarcity. The facts are real, the instruction is the scam."
+
+  ---
+  Test 5: Investment Scam
+
+  crypto scheme join karain daily 5000 earn karain guaranteed no risk sirf 3000 invest karo limited slots available
+  What to say: "Selective omission — 'guaranteed return, no risk' sounds great but hides the reality. False scarcity — 'limited slots'. Our FramingAnalyzer catches both tactics."

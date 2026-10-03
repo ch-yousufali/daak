@@ -1,0 +1,121 @@
+Mind-Flayer Patch v2
+
+⚠️ CONFIDENTIAL BRIEFING
+Clearance Level: Hawkins Lab – Level 3
+A large-scale digital platform is facing an escalating crisis.
+Content circulating on the platform is causing real-world harm — not always
+through false information, but through manipulation of context, framing, and
+narrative.
+The system is under active observation by adversarial actors who adapt to
+detection strategies in real time.
+You have been recruited to design a resilient detection and mitigation system that
+can operate under technical, ethical, financial, and human constraints.
+There is no single correct answer.
+You will be evaluated on reasoning, trade-offs, and system resilience.
+
+🎯 YOUR MISSION
+Design an end-to-end system that can:
+1. Detect potentially harmful or misleading content
+2. Decide when to act automatically, when to escalate, and when to wait
+3. Balance speed, accuracy, cost, and human trust
+4. Remain effective as adversaries adapt
+5. Your solution must be defensible, cost-aware, and adaptive.
+
+🧠 SYSTEM CONSTRAINTS
+(All constraints are mandatory and enforced)
+1️⃣Signal Collapse Rule (Adaptive Adversary)
+Every detection method becomes less effective if overused.
+If a detection technique is triggered too frequently, adversaries learn to bypass it.
+Effect:
+Each detection method has a decay factor applied to its confidence when overused.
+> Over-reliance on a single model or technique will degrade system performance over time.
+
+2️⃣Partial Observability (Latency Trade-off)
+Content does not arrive all at once.
+Information is revealed in stages:
+● Stage 1: Metadata only
+● Stage 2: Partial content (text OR thumbnail, not both)
+● Stage 3: Full content (only if escalated)
+⚠️ Waiting for full content too often violates latency requirements and incurs penalties.
+
+3️⃣Human Trust Budget (Hard Limit)
+● You have access to only 20 human reviews per hour.
+● Human review improves accuracy
+● Overuse causes delays and backlogs
+● Incorrect automated actions reduce platform trust
+● You must decide what truly deserves human attention.
+
+4️⃣Multilingual Ambiguity (Context Trap)
+The platform includes Urdu, Roman Urdu, and English content.
+Some phrases are context-dependent and cannot be safely classified without surrounding
+information.
+Example:
+> “yeh fire hai”
+(praise OR threat depending on context)
+⚠️ Hard classification of ambiguous content is penalized.
+
+5️⃣Poisoned Feedback Loop
+● Human labels are not always reliable.
+● Approximately 15% of human moderation labels contain noise or bias
+● Some feedback may be coordinated or adversarial
+● Blindly trusting labels can reinforce harmful patterns.
+
+6️⃣Budget Reality (No Infinite Compute)
+You are given a monthly system budget of PKR 50,000.
+This must cover:
+● Model inference
+● API usage
+● Any automated analysis
+If the budget is exceeded, parts of the system must shut down.
+
+📦 REQUIRED DELIVERABLES
+Your team must prepare the following:
+1️⃣System Architecture
+● High-level diagram
+● Major components and data flow
+2️⃣Decision Logic
+● How content moves through the system
+● When actions are taken vs deferred
+3️⃣Cost & Latency Strategy
+● Estimated monthly cost
+● How latency constraints are respected
+4️⃣Adaptation Strategy
+● How your system responds when detection methods degrade
+● How it avoids becoming predictable
+5️⃣Failure Mode Declaration (Mandatory)
+Clearly state:
+● Three scenarios where your system will fail
+● The potential impact of each failure
+● How damage is detected or contained
+
+🏆 EVALUATION CRITERIA
+Your solution will be assessed on:
+1. Soundness of reasoning and trade-offs
+2. Adaptability to adversarial behavior
+3. Awareness of cost and latency
+4. Handling of ambiguity and ethics
+5. Clarity and confidence in explanation
+⚠️ Over-engineered or buzzword-heavy solutions without justification will be challenged.
+
+🧩 IMPORTANT NOTES
+● There is no perfect solution
+● Simplicity with strong reasoning is valued
+● You may question assumptions, but must defend alternatives
+● This is a thinking challenge, not a coding contest
+
+️ FINAL MESSAGE
+“The enemy learns.
+Static systems fail.
+Only adaptive thinking survives.”
+
+Friends don’t lie. Good luck.
+
+bro this new evualaion came
+📢 MID-CHALLENGE UPDATE
+New intelligence confirms:
+> A large portion of harmful content is factually correct, but contextually misleading.
+Implications:
+● Fact-checking alone is insufficient
+● Deepfake detection alone is insufficient
+● The system must reason about framing, narrative, and selective presentation
+You may revise your design accordingly.
